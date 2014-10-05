@@ -95,7 +95,7 @@ module.exports = (grunt) ->
           event: ['added', 'deleted']
       views:
         cwd: 'views'
-        files: 'views/**/*.jade'
+        files: ['views/**/*.jade', 'views/**/*.md']
         tasks: ['brerror:newer:jade:tmp', 'glob:tmp']
       options:
         livereload: livereloadPort

@@ -6,4 +6,3 @@ $ ->
         $(@).addClass('active')
       else
         $(@).removeClass('active')
-
