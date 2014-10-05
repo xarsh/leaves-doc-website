@@ -1,0 +1,24 @@
+extends ./layout.jade
+
+block content
+  include _navigation
+
+  .document
+    a(id="home")
+    .hero
+      img.logo(src="img/logo.png" width="334px" height="180px")
+      h1 Leaves
+      p.sub Productivity tool for frontend engineers
+      .code: pre $ npm install -g leaves
+      a.button(href="https://github.com/claudetech/leaves") View on Github
+
+      include _social_buttons
+
+    #doc
+      block doc
+
+    script(id="doc-en" type="text/template")
+    script(id="doc-ja" type="text/template")
+      include:md _doc_ja.md
+
+  include _footer
