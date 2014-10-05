@@ -3,6 +3,11 @@ extends ./layout.jade
 block content
   include _navigation
 
+  ul.language-selector
+    li.item: a(href="http://oss.claudetech.com/leaves") English
+    li.item: a(href="http://oss.claudetech.com/leaves/fr") français
+    li.item: a(href="http://oss.claudetech.com/leaves/ja") 日本語
+
   .document
     a(id="home")
     .hero
