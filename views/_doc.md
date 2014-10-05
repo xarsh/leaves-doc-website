@@ -84,8 +84,8 @@ if you want this to be global to all your project.
 
 The available commands are listed below.
 
-### Setup
 <a id="setup"></a>
+### Setup
 
 You can run the initial setup to have shell completion by running:
 
@@ -95,8 +95,8 @@ $ leaves setup
 
 Only zsh is supported for now, but PR are welcome.
 
+<a id="new"></a>
 ### New
-<a id="newproject"></a>
 
 To create a new project, just run:
 
@@ -116,8 +116,8 @@ Add `--css=less` to use [less css](http://lesscss.org/)
 The default engine is [Jade](http://jade-lang.com/).
 Add `--html=ejs` to use [EJS templates (with layouts)](https://github.com/RandomEtc/ejs-locals)
 
-### Build
 <a id="build"></a>
+### Build
 
 Just run
 
@@ -129,8 +129,8 @@ in your project directory.
 If you want a development build, without
 concatenation and minification, pass the `development` flag.
 
-### Watch
 <a id="watch"></a>
+### Watch
 
 To build and watch your files, run
 
@@ -140,8 +140,8 @@ $ leaves [watch]
 
 (which will run `leaves watch`) in your project directory.
 
-### Upgrade
 <a id="upgrade"></a>
+### Upgrade
 
 You can upgrade your leaves installation by running
 
@@ -163,8 +163,8 @@ careful when you use it if you have some changes.
 This will also run `npm install` for you to install the latest
 dependencies.
 
-### Publish
 <a id="publish"></a>
+### Publish
 
 You can publish your website to [Heroku][heroku] or to [GitHub Pages][github-pages].
 
@@ -184,8 +184,8 @@ For heroku, `APP_NAME` will default to the appName in `.leavesrc`.
 For FTP, you will be asked for your credentials, which will be
 stored in `.leavesrc.local`.
 
-### Install
 <a id="install"></a>
+### Install
 
 Leaves can be used as a wrapper around [bower][bower] and [npm][npm].
 
@@ -200,8 +200,8 @@ If packages are given, `PROVIDER` can be either `bower` or `npm`. If provider is
 New packages are installed using `--save` by default. You can disable this
 behavior by passing `--no-save`.
 
-### Get
 <a id="get"></a>
+### Get
 
 Fetch and prepare project for development.
 
@@ -214,11 +214,11 @@ or for GitHub repositories, the short syntax `user/repo` can be used.
 `PROTOCOL` is only relevant when using the short syntax, and can be
 `https` (default) or `ssh`.
 
-## Functionalities
 <a id="functionalities"></a>
+## Functionalities
 
-### Easy lorem ipsum generation
 <a id="lorem-ipsum"></a>
+### Easy lorem ipsum generation
 
 The function `lorem` is available in all templates.
 Just call
@@ -230,8 +230,8 @@ Just call
 and you will get 10 words of lorem ipsum.
 For other options, see the actual [package documentation][node-lorem-ipsum]
 
-### `script` and `link` globbing
 <a id="globbing"></a>
+### `script` and `link` globbing
 
 To avoid having to insert all scripts in your layout,
 you can use glob syntax.
@@ -292,8 +292,8 @@ The files will always be concatenated in order of appearance.
 
 Check out [the documentation][node-glob-html] for more details.
 
-### CDN for production
 <a id="cdn"></a>
+### CDN for production
 
 For library such as jQuery, it is common to use a CDN
 in production, but it can be better for development to
