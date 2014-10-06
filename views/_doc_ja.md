@@ -78,7 +78,7 @@ leavesが起動しているときは、`views`, `assets`ディレクトリが監
 ## コマンド
 
 <a id="setup"></a>
-### Setup
+### セットアップ
 
 シェルの補完を有効にしたい場合は次のコマンドを実行してください。
 
@@ -89,7 +89,7 @@ $ leaves setup
 現在はzshにのみ対応しておりますが、PRは大歓迎です。
 
 <a id="new"></a>
-### New
+### 新規作成
 
 新規プロジェクトを作成する場合は次のコマンドを実行してください。
 
@@ -110,7 +110,7 @@ $ leaves new PROJECT_NAME [--html=ejs] [--css=less]
 [EJS templates (with layouts)](https://github.com/RandomEtc/ejs-locals)を使う場合は`leaves new`コマンドを実行する際に、`--html=ejs`を追加してください。
 
 <a id="build"></a>
-### Build
+### ビルド
 
 各ファイルを一括でコンパイルする場合は、プロジェクトのディレクトリから次のコマンドを実行してください。
 
@@ -122,7 +122,7 @@ $ leaves build [--development]
 この場合は、通常ビルド時に行われるファイルの軽量化と結合を行いません。
 
 <a id="watch"></a>
-### Watch
+### 監視
 
 プロジェクトを監視し、各ファイルの変更をブラウザ画面に自動で反映させたい場合はプロジェクトのディレクトリから次のコマンドを実行してください。
 
@@ -131,7 +131,7 @@ $ leaves [watch]
 ```
 
 <a id="upgrade"></a>
-### Upgrade
+### アップグレード
 
 Leavesをアップグレードする場合は次のコマンドを実行してください。
 
@@ -148,7 +148,7 @@ $ leaves upgrade -o
 を実行すると、`package.json`も一緒に更新されます。
 
 <a id="publish"></a>
-### Publish
+### 公開
 
 作ったサイトを[Heroku][heroku]か[GitHub Pages][github-pages]、またはFTPサーバーにアップロードすることができます。
 
@@ -169,7 +169,7 @@ Github Pagesの場合、http://USERNAME.github.io/REPO_NAME というURLで公�
 その際に入力した内容は`.leaves.local`に保存されます。
 
 <a id="install"></a>
-### Install
+### インストール
 
 Leavesを使用して[bower][bower]や[npm][npm]を使用したライブラリのインストールが行えます。
 
@@ -185,7 +185,7 @@ $ leaves install [PACKAGES [-p PROVIDER] [--no-save]]
 `bower.json`に依存関係を書き込まないようにしたい場合は、`--no-save`をコマンドに付けてください。
 
 <a id="get"></a>
-### Get
+### 取得
 
 プロジェクトのダウンロードと準備が行えます。
 
@@ -199,7 +199,7 @@ $ leaves get GIT_REPOSITORY [-p PROTOCOL]
 
 
 <a id="config"></a>
-### Config
+### 設定
 
 Leavesの設定はコマンドラインから簡単に行えます。
 
