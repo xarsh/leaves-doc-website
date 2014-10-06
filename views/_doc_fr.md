@@ -42,7 +42,7 @@ $ leaves
 
 et codez!
 
-### Récupérer un ficher de Git
+### Récupérer un projet de Git
 
 ```sh
 $ leaves get https://github.com/moi/mon_projet_leaves.git
