@@ -74,7 +74,7 @@ The app has the following structure:
 when running leaves, `views` and `assets` are watched, 
 compiled or copied on change and your browser is reloaded.
 
-## Usage
+## Commands
 <a id="usage"></a>
 
 For every command, you can pass the `--save-options` flag
