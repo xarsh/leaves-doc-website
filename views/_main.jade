@@ -1,7 +1,8 @@
 extends ./layout.jade
 
 block content
-  include _navigation
+  block navigation
+    include _navigation
 
   ul.language-selector
     li.item: a(href="http://oss.claudetech.com/leaves") English
@@ -12,9 +13,13 @@ block content
     a(id="home")
     .hero
       img.logo(src="img/logo.png" height="240px")
-      p.sub Productivity tool for frontend engineers
+      p.sub
+        block catch_phrase
+          | Productivity tool for frontend engineers
       .code: pre $ npm install -g leaves
-      a.button(href="https://github.com/claudetech/leaves") View on Github
+      a.button(href="https://github.com/claudetech/leaves")
+        block view_github
+          | View on Github
 
       include _social_buttons
 
