@@ -7,6 +7,7 @@
 * スクリプトとスタイルシートの自動インクルード
 * ブラウザ画面上でのコンパイルエラー表示
 * 1つのコマンドでHeroku、GitHubページ、FTPにデプロイ
+* 多言語化対応
 * その他: lorem-ipsumジェネレーター, CDNの自動使用, シェル補完, 簡単アップグレード
 
 <a id="installation"></a>
@@ -196,6 +197,39 @@ $ leaves get GIT_REPOSITORY [-p PROTOCOL]
 また、Githubレポジトリの場合、`ユーザ名/レポジトリ名`のような文法も使えます。
 その際は`PROTOCOL`として、`https`(デフォルト)か`ssh`を指定できます。
 
+
+<a id="config"></a>
+### Config
+
+Leavesの設定はコマンドラインから簡単に行えます。
+
+```sh
+$ leaves config [TYPE] get key
+$ leaves config [TYPE] set key value
+$ leaves config [TYPE] unset key
+```
+
+`TYPE`に指定できるオプションは3つあります。標準では`--project`が使われ、この時設定された値はGitで管理されます。
+また`--local`であればGitで管理されなくなり、さらに`--global`を指定した場合は、設定した内容がすべてのプロジェクトに適用されます。
+
+例えば、もし今のLeavesプロジェクトでFTPアップロード機能を常に使いたい場合は、以下のコマンドを入力してください。
+
+```sh
+$ leaves config set commands.publish.provider ftp
+```
+
+もしCSSのテンプレートエンジンとしてStylusではなくlessを使用したい場合は、以下のようになります。
+
+```sh
+$ leaves config set --global commands.new.css less
+```
+
+他者と共有しない自分だけの設定は`PROJECT_ROOT/.leavesrc.local`に、プロジェクト全体での設定は
+`PROJECT_ROOT/.leavesrc`に、またすべてのプロジェクトに適用されるグローバル設定は
+`$HOME/.leaves/config`に保存されます。
+設定ファイルの形式は普通のJSONなので、テキストエディタなどで直接編集することも可能です。
+
+
 <a id="functionalities"></a>
 ## その他の機能
 
@@ -290,6 +324,67 @@ html
 詳細は [the documentation][node-cdnify] を参照ください。
 
 
+<a id="i18n"></a>
+### 多言語化
+
+Leavesには基本的なページ多言語化のための機能が備わっています。
+
+`/`をデフォルトのロケールとし、その他の言語のページは`/LANG/`に生成されます。
+
+`locales/LANG.yml`に存在する辞書ファイルを元に、ビルド時にすべての言語を翻訳します。
+
+以下に簡単な例を挙げます。
+
+`index.jade`
+
+```jade
+block content
+ h1(data-t="greetings.hi")
+ h4(data-t) greetings.bye
+```
+
+`locales/en.yml`
+
+```yml
+greetings:
+ hi: Hello!
+ bye: Goodbye!
+```
+
+`locales/fr.yml`
+
+```yml
+greetings:
+ hi: Bonjour!
+ bye: Au revoir!
+```
+
+以上のコマンドにより、英語版のページが`/`に、フランス語版のページが`/fr`に生成されます。
+
+`dist/index.html`:
+
+```html
+<h1>Hello!</h1>
+<h4>Goodbye!</h4>
+```
+
+`dist/fr/index.html`:
+
+```html
+<h1>Bonjour!</h1>
+<h4>Au revoir!</h4>
+```
+
+デフォルトの言語をフランス語にする場合は、以下のコマンドを実行してください。
+
+```sh
+$ leaves config set i18n.locale fr
+```
+
+詳細は[ドキュメント][node-static-i18n]を御覧ください。
+すべてのstatic-i18nに関する設定は`.leavesrc`の中で`i18n`というキーの元で行われます。
+
+
 [generator-static-website]: https://github.com/claudetech/generator-static-website
 [github-pages]: https://pages.github.com/
 [heroku]: https://www.heroku.com/
@@ -298,3 +393,4 @@ html
 [node-lorem-ipsum]: https://github.com/knicklabs/lorem-ipsum.js
 [node-glob-html]: https://github.com/claudetech/node-glob-html
 [node-cdnify]: https://github.com/claudetech/node-cdnify
+[node-static-i18n]: https://github.com/claudetech/node-static-i18n

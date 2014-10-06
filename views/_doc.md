@@ -354,7 +354,7 @@ Leaves has a basic internationalization functionality integrated.
 It translates the default locale at `/`, and the other locales
 at `/LANG/`.
 
-Locales are generated automatically, from all the files matching `locales/LANG.yml`.
+Translated files are generated automatically, from all the files matching `locales/LANG.yml`.
 
 Here is a short example
 
