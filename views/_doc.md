@@ -7,6 +7,7 @@
 * Scripts and stylesheets globbing with `**/*.js` like syntax
 * Compile error displayed in browser
 * Single command deploy to Heroku and GitHub pages, and FTP servers
+* Simple internationalization support
 * Misc: lorem-ipsum generator, easy CDN usage, shell completion, single command upgrade
 
 ## Installation
@@ -214,6 +215,39 @@ or for GitHub repositories, the short syntax `user/repo` can be used.
 `PROTOCOL` is only relevant when using the short syntax, and can be
 `https` (default) or `ssh`.
 
+<a id="config"></a>
+### Config
+
+Leaves can be configured easily through the command line.
+
+```sh
+$ leaves config [TYPE] get key
+$ leaves config [TYPE] set key value
+$ leaves config [TYPE] unset key
+```
+
+where `TYPE` can be `--local` for the local configuration which is gitignored,
+`--project` (default) for the project configuration which is not gitignored,
+or `--global` for the configuration common to all project.
+
+For example, if you always want to use `ftp` upload for a project, you
+could run:
+
+```sh
+$ leaves config set commands.publish.provider ftp
+```
+
+If you always want to use less css instead of stylus, you could run
+
+```sh
+$ leaves config set --global commands.new.css less
+```
+
+Local configuration is saved at `PROJECT_ROOT/.leavesrc.local`, project
+configuration is saved at `PROJECT_ROOT/.leavesrc` and global configuration
+is saved at `$HOME/.leaves/config`. It is a normal JSON file, so
+you can of course edit it by hand without any problem.
+
 <a id="functionalities"></a>
 ## Functionalities
 
@@ -312,6 +346,70 @@ result in a compile error.
 
 Check out [the documentation][node-cdnify] for more details.
 
+<a id="i18n"></a>
+### Internationalization
+
+Leaves has a basic internationalization functionality integrated.
+
+It translates the default locale at `/`, and the other locales
+at `/LANG/`.
+
+Locales are generated automatically, from all the files matching `locales/LANG.yml`.
+
+Here is a short example
+
+`index.jade`
+
+```jade
+block content
+  h1(data-t="greetings.hi")
+  h4(data-t) greetings.bye
+```
+
+`locales/en.yml`
+
+```yml
+greetings:
+  hi: Hello!
+  bye: Goodbye!
+```
+
+`locales/fr.yml`
+
+```yml
+greetings:
+  hi: Bonjour!
+  bye: Au revoir!
+```
+
+will generate the English version at `/` and the French version
+at `/fr`.
+
+`dist/index.html`:
+
+```html
+<h1>Hello!</h1>
+<h4>Goodbye!</h4>
+```
+
+`dist/fr/index.html`:
+
+```html
+<h1>Bonjour!</h1>
+<h4>Au revoir!</h4>
+```
+
+To set the default language to French, you can run
+
+```sh
+$ leaves config set i18n.locale fr
+```
+
+For more information, [check out the documentation][node-static-i18n].
+All the options of static-i18n can be customized
+in `.leavesrc`, under the `i18n` key.
+
+
 [generator-static-website]: https://github.com/claudetech/generator-static-website
 [github-pages]: https://pages.github.com/
 [heroku]: https://www.heroku.com/
@@ -320,3 +418,4 @@ Check out [the documentation][node-cdnify] for more details.
 [node-lorem-ipsum]: https://github.com/knicklabs/lorem-ipsum.js
 [node-cdnify]: https://github.com/claudetech/node-cdnify
 [node-glob-html]: https://github.com/claudetech/node-glob-html
+[node-static-i18n]: https://github.com/claudetech/node-static-i18n
