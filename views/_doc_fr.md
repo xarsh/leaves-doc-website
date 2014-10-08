@@ -359,7 +359,7 @@ Voir [la documentation][node-cdnify] pour plus d'information.
 ### Mode dév
 
 Leaves a un mode dévelopement très simple. Pour séparer
-le HTML généré lors du développement, et de la production,
+le HTML généré en développement et en production,
 il suffit d'utiliser la syntaxe suivante.
 
 ```jade
