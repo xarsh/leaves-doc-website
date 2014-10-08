@@ -8,7 +8,7 @@
 * Compile error displayed in browser
 * Single command deploy to Heroku and GitHub pages, and FTP servers
 * Simple internationalization support
-* Misc: lorem-ipsum generator, easy CDN usage, shell completion, single command upgrade
+* Misc: lorem-ipsum generator, easy CDN usage, shell completion, single command upgrade, dev mode
 
 ## Installation
 <a id="installation"></a>
@@ -345,6 +345,20 @@ Note that `cdn` attribute is not compatible with `glob` and will
 result in a compile error.
 
 Check out [the documentation][node-cdnify] for more details.
+
+<a id="dev-mode"></a>
+### Dev mode
+
+Leaves has a very simple development mode to
+change your templates dynamically in development and production.
+In your Jade templates, use the following:
+
+```jade
+if dev
+  p This is dev
+else
+  p This is prod
+```
 
 <a id="i18n"></a>
 ### Internationalization

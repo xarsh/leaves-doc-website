@@ -355,6 +355,20 @@ des deux provoquera une erreur de compilation.
 
 Voir [la documentation][node-cdnify] pour plus d'information.
 
+<a id="dev-mode"></a>
+### Mode dév
+
+Leaves a un mode dévelopement très simple. Pour séparer
+le HTML généré lors du développement, et de la production,
+il suffit d'utiliser la syntaxe suivante.
+
+```jade
+if dev
+  p C'est le mode développement
+else
+  p C'est le mode production
+```
+
 <a id="i18n"></a>
 ### Internationalisation
 
