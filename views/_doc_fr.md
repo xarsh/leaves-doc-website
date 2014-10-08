@@ -59,13 +59,21 @@ Un projet a la structure suivante:
 ```
 .
 ├── assets
-│   ├── css
-│   │   └── main.styl
-│   ├── favicon.ico
-│   ├── img
-│   └── js
-│       └── app.coffee
+│   ├── css
+│   │   ├── .keep
+│   │   └── main.styl
+│   ├── favicon.ico
+│   ├── img
+│   │   └── .keep
+│   └── js
+│       ├── app.coffee
+│       └── .keep
 ├── bower.json
+├── .bowerrc
+├── .gitignore
+├── .gruntfile.coffee
+├── .leavesrc
+├── .leavesrc.local
 ├── package.json
 └── views
     ├── index.jade
