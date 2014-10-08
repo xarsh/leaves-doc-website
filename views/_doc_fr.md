@@ -11,8 +11,8 @@
 * Plus: générateur lorem-ipsum, CDN pour la production, auto-complétion,
   mise à jour en une seule commande
 
-## Installation
 <a id="installation"></a>
+## Installation
 
 Pour installer Leaves, utiliser la commande ci-dessous.
 
@@ -29,8 +29,8 @@ utiliser la commande suivante.
 $ leaves setup
 ```
 
-## Pour commencer
 <a id="gettingstarted"></a>
+## Pour commencer
 
 ### Créer un nouveau projet
 
@@ -84,8 +84,8 @@ en lançant leaves, les dossiers `views` et `assets` sont
 surveillés, et les fichiers sont compilés ou copiés
 lorsque un changement est détecté.
 
-## Commandes
 <a id="usage"></a>
+## Commandes
 
 Pour toutes les commands,  `--save-options` peut être passé
 en options, pour enregistrer les arguments pour le prochain usage.

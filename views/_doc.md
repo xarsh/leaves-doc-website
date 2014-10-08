@@ -10,8 +10,8 @@
 * Simple internationalization support
 * Misc: lorem-ipsum generator, easy CDN usage, shell completion, single command upgrade, dev mode
 
-## Installation
 <a id="installation"></a>
+## Installation
 
 To install leaves, run
 
@@ -28,8 +28,8 @@ and setup the shell completion, run
 $ leaves setup
 ```
 
-## Getting started
 <a id="gettingstarted"></a>
+## Getting started
 
 ### Start a new project
 
@@ -82,8 +82,8 @@ The app has the following structure:
 when running leaves, `views` and `assets` are watched, 
 compiled or copied on change and your browser is reloaded.
 
-## Commands
 <a id="usage"></a>
+## Commands
 
 For every command, you can pass the `--save-options` flag
 to remember the options you just passed for future usage.
