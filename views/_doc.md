@@ -431,6 +431,15 @@ For more information, [check out the documentation][node-static-i18n].
 All the options of static-i18n can be customized
 in `.leavesrc`, under the `i18n` key.
 
+<a id="configuration"></a>
+## Configuration
+
+<a id="global-config"></a>
+### Global configuration
+
+The global configuration for `leaves` is contained in
+
+
 
 [generator-static-website]: https://github.com/claudetech/generator-static-website
 [github-pages]: https://pages.github.com/
