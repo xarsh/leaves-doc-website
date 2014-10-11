@@ -434,10 +434,28 @@ in `.leavesrc`, under the `i18n` key.
 <a id="configuration"></a>
 ## Configuration
 
+A lot of options in leaves can be configured. The configuration can be
+global, project based, or local (ignored by git).
+
+Configuration is stored in the following files:
+
+* global: `$HOME/.leaves/config`
+* project: `PROJECT/.leavesrc`
+* local: `PROJECT/.leavesrc.local`
+
+The files are in JSON format and can be edited by hand,
+or using the `config` command:
+
+```
+$ leaves config [--global|--local|--project] set KEY VALUE
+```
+
 <a id="global-config"></a>
 ### Global configuration
 
-The global configuration for `leaves` is contained in
+The global configuration is used for global commands, such as `new` or `get`,
+and as default if the setting is not found in the project configuration.
+
 
 
 
