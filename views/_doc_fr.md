@@ -280,6 +280,39 @@ La fonction `lorem` est accessible dans tous les templates.
 La commande ci-dessus génère 10 mots aléatoires de lorem ipsum.
 Pour plus d'options, voir [la documentation][node-lorem-ipsum].
 
+<a id="dummy-image"></a>
+### Génération d'images fictives
+
+Leaves peut générer automatiquement des images fictives
+de n'importe quelle taille pour aider au développement.
+
+La fonction `dumimg` est accessible dans tous les
+templates et peut être utilisée de la manière suivante:
+
+```
+= img(src=dumimg(128, 128, 'random', 'http://mon/image.jpg'))
+```
+
+Le code ci-dessus va générer une image fictive de 128x128
+pixels. L'image sera remplacée par l'URL passée en
+quatrième argument de la fonction en production. Tous les arguments
+de cette fonction sont optionnels, et si le dernier
+argument est omis, l'image fictive sera également utilisée
+en production.
+
+Les types d'images disponibles actuellement sont:
+
+* `user`
+* `food`
+* `mountain`
+* `sea`
+
+`dumimg` accepte aussi un object en argument.
+
+```
+= img(src=dumimg({width: 48, height: 48, type: 'random', replace: 'http://my/real/image.jpg'}))
+```
+
 <a id="globbing"></a>
 ### Inclusion de `script` et `link`
 
