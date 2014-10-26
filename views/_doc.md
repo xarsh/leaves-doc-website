@@ -272,6 +272,40 @@ Just call
 and you will get 10 words of lorem ipsum.
 For other options, see the actual [package documentation][node-lorem-ipsum]
 
+<a id="dummy-image"></a>
+### Dummy images generation
+
+You can use Leaves to easily generate dummy images of any size
+when during development.
+
+The function `dumimg` is available as a helper in all your templates,
+and you can use it the following way:
+
+```
+= img(src=dumimg(128, 128, 'random', 'http://my/real/image.jpg'))
+```
+
+This will generate a random image of size 128x128 pixels.
+The image source will be replaced by the 4th parameter during
+production builds. All the parameters are optional. If you omit
+the last parameter, the dummy image will be used even for
+production build.
+
+The available image types are for now
+
+* `user`
+* `food`
+* `mountain`
+* `sea`
+
+You can also pass an object to `dumimg`:
+
+```
+= img(src=dumimg({width: 48, height: 48, type: 'random', replace: 'http://my/real/image.jpg'}))
+```
+
+if you want to only pass some of the options.
+
 <a id="globbing"></a>
 ### `script` and `link` globbing
 
