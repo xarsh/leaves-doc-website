@@ -245,7 +245,7 @@ $ leaves config [TYPE] unset key
 `--project` (défaut) pour une configuration du projet, incluse par git,
 ou `--global` pour une configuration commune à tous les projets.
 
-Par example, pour toujours publier un projet par ftp, la commande suivante
+Par exemple, pour toujours publier un projet par ftp, la commande suivante
 peut être utilisée.
 
 ```sh
@@ -421,7 +421,7 @@ sont compilées à `/LANG/`.
 Les différentes langues sont générées automatiquement à partir
 des fichiers qui ont la forme `locales/LANG.yml`.
 
-Voici un example.
+Voici un exemple.
 
 `index.jade`
 
@@ -447,7 +447,7 @@ greetings:
   bye: Au revoir!
 ```
 
-Cette example va générer la version anglaise à `/` et la version
+Cette exemple va générer la version anglaise à `/` et la version
 française à `/fr`.
 
 `dist/index.html`:
@@ -474,6 +474,156 @@ $ leaves config set i18n.locale fr
 Voir [la documentation][node-static-i18n] pour plus d'information.
 Toutes les options de static-i18n peuvent être changées
 dans `.leavesrc` avec la clé `i18n`.
+
+
+<a id="configuration"></a>
+## Configuration
+
+<a id="file-config"></a>
+### Fichiers de configuration
+
+Beaucoup d'options dans Leaves peuvent être configurées.
+Les configurations sont globales, par projet, ou
+locales (ignorées par git).
+
+Les configurations sont stockées dans les fichiers suivants:
+
+* globale: `$HOME/.leaves/config`
+* projet: `PROJECT/.leavesrc`
+* locale: `PROJECT/.leavesrc.local`
+
+Les fichiers de configuration sont au format JSON et peuvent
+être edité manuellement, ou avec la commande `config`:
+
+```
+$ leaves config [--global|--local|--project] set CLEF VALEUR
+```
+
+La configuration globale est utilisée pour les commandes
+globales, telles que `new` ou `get`, ainsi que comme
+valeurs par défaut quand le réglage n'existe pas dans
+les fichiers de configuration du projet.
+
+La configuration du projet peut par exemple être utilisée pour régler
+la méthode de publication par défaut, ou encore pour régler
+où les fichiers seront compilés dans le projets.
+
+La configuration par défaut est la suivante.
+
+```json
+{
+  "i18n": {
+    "localesDir": "locales"
+  },
+  "html": {
+    "ext": ".html"
+  },
+  "css":{
+    "outdir": "css"
+  },
+  "js": {
+    "outdir": "js"
+  },
+  "ports":
+    "http": 9000,
+    "livereload": 35729
+}
+```
+
+Toutes les clés de configuration peuvent être préfixées par
+`dist.` ou `dev.` pour n'être actives qu'en distribution ou en
+dévelopement.
+
+Par exemple, pour créer un thème Wordpress avec Leaves, nous
+avons utilisée les réglages suivants:
+
+```sh
+$ leaves config set dist.html.ext .php
+$ leaves config set css.outdir .
+```
+
+avec lesquels les fichiers HTML sont compilés avec l'extension
+`.php` en production, et les fichiers CSS sont compilés à la racine
+du site.
+
+En plus des réglages ci-dessus, les arguments par défaut de toutes
+les commandes peuvent être changées de la manière suivante:
+
+```sh
+$ leaves config set commands.COMMANDE.OPTION VALEUR
+```
+
+par exemple:
+
+```sh
+$ leaves config set commands.publish.provider ftp
+```
+
+<a id="hooks"></a>
+### Hooks
+
+Quand le processus normal de compilation et le
+changement de réglages ne suffisent plus,
+les hooks peuvent être utilisées pour personaliser
+la compilation.
+
+Leaves utilise Grunt pour compiler le projet, les hooks
+doivent donc être écris comme de tâches Grunt, dans un fichier
+nommé `grunt.hooks.coffee` ou `grunt.hooks.js`.
+
+Les tâches suivantes sont exécutées durant la compilation.
+
+* `compile`
+  * `clean`
+  * `makeCopy`
+  * `stylus` (ou `less`)
+  * `coffee`
+  * `views`
+
+Toutes les tâches peuvent être préfixées par `before` ou `after`
+pour créer un hook pour celle-ci. Par exemple,
+une tâche executée après `stylus` peut être écrite de la manière suivante.
+
+```coffee
+module.exports = (grunt, config) ->
+  grunt.registerTask 'afterStylus', (env) ->
+    // faire quelque chose après la compilation du CSS
+```
+
+`config` est la configuration du projet et `env` est
+`tmp` (pendant le développement), `dev` (quand compilé avec `leaves build --development`) ou `dist` (quand compilé avec `leaves build`).
+
+Voici un exemple de hooks que nous avons utilisée lors de la création
+d'une SDK JavaScript.
+Les hooks suivants sont utilisées pour inclure le CSS directement
+dans le JavaScript, et effacer tous les fichiers à par
+le fichier de la SDK minimifiée.
+
+```coffee
+path = require 'path'
+fs   = require 'fs-extra'
+_    = require 'lodash'
+
+SDK_FILE_NAME = "voisee-js-sdk.min.js"
+
+module.exports = (grunt, config) ->
+  grunt.registerTask 'afterStylus', 'Inline style', (env) ->
+    sdkCssFile = path.join(grunt.config.get('stylus')[env].files[0].dest, 'sdk.css')
+    jsOutFile = path.join(grunt.config.get('coffee')[env].files[0].dest, 'sdk', 'style.js')
+    sdkCss = fs.readFileSync(sdkCssFile, 'utf8').replace(/\n/g, '')
+    jsInline = "VoiseeSDK.css='#{sdkCss}';"
+    fs.writeFileSync jsOutFile, jsInline
+
+  grunt.registerTask 'afterCompile', (env) ->
+    return unless env == 'dist'
+    done = @async()
+    sdkFile = path.join(grunt.config.get('coffee').dist.files[0].dest, 'sdk.min.js')
+    fs.move sdkFile, "dist/#{SDK_FILE_NAME}", ->
+      _.each fs.readdirSync('dist'), (file) ->
+        return if file == SDK_FILE_NAME
+        fs.removeSync path.join('dist', file)
+      done()
+```
 
 
 [generator-static-website]: https://github.com/claudetech/generator-static-website
