@@ -1,0 +1,16 @@
+extends ./layout.jade
+
+block content
+  include _header
+
+  .documentation
+    .head: .container
+      h1 Documentation
+
+    .content: .container
+      include _documentation-menu
+
+      .body
+        .markdown-body: include:md markdown/_internationalization.md
+
+  include _footer

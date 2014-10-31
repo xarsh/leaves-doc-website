@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title Leaves : Productivity tool for frontend engineers
+    meta(name="author" content="Claude Tech")
+    meta(name="description" content="Leaves, the awesome site generator")
+    != '\n<!--[if lt IE 9]>'
+      script(src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js")
+    != '\n<![endif]-->\n'
+    link(rel="shortcut icon" href="favicon.ico")
+    link(rel='stylesheet' href='http://fonts.googleapis.com/css?family=Merriweather+Sans:700,300')
+    link(rel='stylesheet' href='components/github-markdown-css/github-markdown.css')
+    link(rel="stylesheet" href="css/main.css")
+    script(src="js/app.js")
+
+  body: .content-wrapper
+    include social/_sdk.html
+    block content
+

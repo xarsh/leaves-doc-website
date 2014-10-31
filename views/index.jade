@@ -1,0 +1,53 @@
+extends ./layout.jade
+
+block content
+  include _header
+
+  .hero: .container
+    h1.slogan Productivity tool for frontend engineers
+    p= lorem(15)
+    a.button(href="#") Quick start
+    .social-buttons
+      include social/_tweet_button.html
+      include social/_star_button.html
+      include social/_like_button.html
+
+  .features: .container
+    ul
+      li
+        i.lf-preprocess
+        span.head Preprocessing
+        p= lorem(20)
+      li
+        i.lf-autoreload
+        span.head Live browser refresh
+        p= lorem(20)
+      li
+        i.lf-server
+        span.head Built-in HTTP server
+        p= lorem(20)
+      li
+        i.lf-deploy
+        span.head Single command deploy
+        p= lorem(20)
+      li
+        i.lf-i18n
+        span.head Internationalization
+        p= lorem(20)
+      li
+        i.lf-extensible
+        span.head Highly extensible
+        p= lorem(20)
+
+  .installation: .container
+    a(name="installation")
+    h1.title Installation
+    pre
+      code npm install -g leaves
+      code leaves new mysite
+      code cd mysite
+      code leaves
+    a.button(href="#") Get started
+
+
+  include _footer

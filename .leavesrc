@@ -1,0 +1,11 @@
+{
+    "project": {
+        "leaves": "0.23.12",
+        "appname": "leaves-doc-site",
+        "options": {
+            "css": "stylus",
+            "html": "jade"
+        }
+    },
+    "leaves": "0.23.15"
+}
