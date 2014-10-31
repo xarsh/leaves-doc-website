@@ -5,7 +5,9 @@ block content
 
   .hero: .container
     h1.slogan Productivity tool for frontend engineers
-    p= lorem(15)
+    p.
+      Automatize all common frontend tasks for easy, rapid and efficient
+      design and development.
     a.button(href="./getting-started.html") Quick start
     .social-buttons
       include social/_tweet_button.html
@@ -17,27 +19,44 @@ block content
       li
         i.lf-preprocess
         span.head Preprocessing
-        p= lorem(20)
+        p.
+          The major HTML template engines and CSS preprocessors
+          available in NodeJS can be used without any extra setup.
       li
         i.lf-autoreload
         span.head Live browser refresh
-        p= lorem(20)
+        p.
+          All the changes are watched and when on file save,
+          the needed files will are recompiled and the browser reloaded
+          automatically.
       li
         i.lf-server
         span.head Built-in HTTP server
-        p= lorem(20)
+        p.
+          An HTTP server is built-in and used to run your application
+          to be able to use any feature that would be run in a production
+          environment.
       li
         i.lf-deploy
         span.head Single command deploy
-        p= lorem(20)
+        p.
+          Leaves projects can be deplyed to Heroku, GitHub Pages or any
+          FTP server in a single command. The project will be compiled,
+          optimized and uploaded automatically.
       li
         i.lf-i18n
         span.head Internationalization
-        p= lorem(20)
+        p.
+          Internationalization is available without any extra setup
+          and Leaves can generate a static website translated
+          in several languages easily.
       li
         i.lf-extensible
         span.head Highly extensible
-        p= lorem(20)
+        p.
+          Almost all options in the project are easily configurable
+          and additions and changes to the default build system can be done in
+          a few lines.
 
   .installation: .container
     a(name="installation")

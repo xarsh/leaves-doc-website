@@ -1,16 +1,4 @@
-extends ./layout.jade
+extends ./main.jade
 
-block content
-  include _header
-
-  .documentation
-    .head: .container
-      h1 Documentation
-
-    .content: .container
-      include _documentation-menu
-
-      .body
-        .markdown-body: include:md markdown/_commands.md
-
-  include _footer
+block main
+  include:md markdown/_commands.md
