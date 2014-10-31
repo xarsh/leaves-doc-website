@@ -9,7 +9,7 @@ if you want this to be global to all your project.
 The available commands are listed below.
 
 <a id="setup"></a>
-## Setup
+## setup
 
 You can run the initial setup to have shell completion by running:
 
@@ -20,7 +20,7 @@ $ leaves setup
 Only zsh is supported for now, but PR are welcome.
 
 <a id="new"></a>
-## New
+## new
 
 To create a new project, just run:
 
@@ -30,18 +30,14 @@ $ leaves new PROJECT_NAME [--html=ejs] [--css=less]
 
 you can then `cd` in `PROJECT_NAME`.
 
-### CSS engines
-
 The default engine is [Stylus](http://learnboost.github.io/stylus/).
 Add `--css=less` to use [less css](http://lesscss.org/)
-
-### HTML template engines
 
 The default engine is [Jade](http://jade-lang.com/).
 Add `--html=ejs` to use [EJS templates (with layouts)](https://github.com/RandomEtc/ejs-locals)
 
 <a id="build"></a>
-## Build
+## build
 
 Just run
 
@@ -54,7 +50,7 @@ If you want a development build, without
 concatenation and minification, pass the `development` flag.
 
 <a id="watch"></a>
-## Watch
+## watch
 
 To build and watch your files, run
 
@@ -65,7 +61,7 @@ $ leaves [watch]
 (which will run `leaves watch`) in your project directory.
 
 <a id="upgrade"></a>
-## Upgrade
+## upgrade
 
 You can upgrade your leaves installation by running
 
@@ -88,7 +84,7 @@ This will also run `npm install` for you to install the latest
 dependencies.
 
 <a id="publish"></a>
-## Publish
+## publish
 
 You can publish your website to [Heroku][heroku] or to [GitHub Pages][github-pages].
 
@@ -109,7 +105,7 @@ For FTP, you will be asked for your credentials, which will be
 stored in `.leavesrc.local`.
 
 <a id="install"></a>
-## Install
+## install
 
 Leaves can be used as a wrapper around [bower][bower] and [npm][npm].
 
@@ -125,7 +121,7 @@ New packages are installed using `--save` by default. You can disable this
 behavior by passing `--no-save`.
 
 <a id="get"></a>
-## Get
+## get
 
 Fetch and prepare project for development.
 
@@ -139,7 +135,7 @@ or for GitHub repositories, the short syntax `user/repo` can be used.
 `https` (default) or `ssh`.
 
 <a id="config"></a>
-## Config
+## config
 
 Leaves can be configured easily through the command line.
 

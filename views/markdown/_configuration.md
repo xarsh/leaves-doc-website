@@ -74,7 +74,7 @@ $ leaves config set commands.publish.provider ftp
 ```
 
 <a id="hooks"></a>
-### Hooks
+## Hooks
 
 When the normal build process and the configuration options
 are not enough, hooks can be used to customize the build
