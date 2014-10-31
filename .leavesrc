@@ -12,5 +12,9 @@
         "publish": {
             "provider": "ftp"
         }
+    },
+    "i18n": {
+        "fileFormat": "json",
+        "locale": "ja"
     }
 }
