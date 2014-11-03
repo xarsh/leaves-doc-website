@@ -252,9 +252,20 @@ module.exports = (grunt) ->
         ,
           expand: true
           cwd: 'assets'
-          src: ['**/*', '!css', '!js', '!css/**/*.styl', '!js/**/*.coffee']
+          src: ['**/*', '!css', '!js', '!css/**/*.styl', '!js/**/*.coffee', '!img/**/*.{png,jpg,gif}']
           dest: 'dist'
         ]
+
+    imagemin:
+      dist:
+        files: [
+          expand: true
+          cwd: 'assets'
+          src: ['img/**/*.{png,jpg,gif}']
+          dest: 'dist'
+        ]
+      tmp: {}
+      dev: {}
 
     concurrent:
       start:
@@ -359,6 +370,7 @@ module.exports = (grunt) ->
   compileTasks = [
     'clean'
     'makeCopy'
+    'imagemin'
     'stylus'
     'coffee'
     'views'

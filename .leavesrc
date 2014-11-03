@@ -7,7 +7,7 @@
             "html": "jade"
         }
     },
-    "leaves": "0.23.15",
+    "leaves": "0.23.17",
     "commands": {
         "publish": {
             "provider": "ftp"
