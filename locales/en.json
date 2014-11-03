@@ -19,7 +19,7 @@
 		"deploy": {
       "icon": "lf-deploy",
 			"label": "Single command deploy",
-			"value": "Leaves projects can be deplyed to Heroku, GitHub Pages or any FTP server in a single command. The project will be compiled, optimized and uploaded automatically."
+			"value": "Leaves projects can be deployed to Heroku, GitHub Pages or any FTP server in a single command. The project will be compiled, optimized and uploaded automatically."
 		},
 		"i18n": {
       "icon": "lf-i18n",
