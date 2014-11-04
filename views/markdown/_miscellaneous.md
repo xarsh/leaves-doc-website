@@ -21,7 +21,7 @@ The function `dumimg` is available as a helper in all your templates,
 and you can use it the following way:
 
 ```
-= img(src=dumimg(128, 128, 'random', 'http://my/real/image.jpg'))
+img(src=dumimg(128, 128, 'random', 'http://my/real/image.jpg'))
 ```
 
 This will generate a random image of size 128x128 pixels.
@@ -40,7 +40,7 @@ The available image types are for now
 You can also pass an object to `dumimg`:
 
 ```
-= img(src=dumimg({width: 48, height: 48, type: 'random', replace: 'http://my/real/image.jpg'}))
+img(src=dumimg({width: 48, height: 48, type: 'random', replace: 'http://my/real/image.jpg'}))
 ```
 
 if you want to only pass some of the options.
