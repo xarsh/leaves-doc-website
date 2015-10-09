@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Leaves : Productivity tool for frontend engineers</title>
+    <meta name="author" content="Claude Tech">
+    <meta name="description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:title" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:url" content="http://oss.claudetech.com/leaves/">
+    <meta property="og:image" content="http://oss.claudetech.com/leaves/img/ogimage.png">
+    <meta property="og:site_name" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:email" content="info@claudetech.com">
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather+Sans:700,300">
+    <link rel="stylesheet" href="../components/github-markdown-css/github-markdown.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- Facebook -->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=243773772497871&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+        <!-- Twitter -->
+        <script>
+            ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+        </script>
+
+
+        <!-- Google Analitics -->
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-53835415-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <header>
+            <div class="container">
+                <a href="/"><img src="../img/leaves_logo.png" class="logo"></a>
+                <ul class="navigation">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./getting-started.html">Documentation</a></li>
+                    <li><a href="https://github.com/claudetech/leaves">Contribute</a></li>
+                    <li><a href="https://github.com/claudetech/leaves/issues">Issues</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="documentation">
+            <div class="head">
+                <div class="container">
+                    <h1>Documentation</h1></div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <ul class="menu">
+                        <li><b>Getting started<ul><li><a href="./getting-started.html">Quick start</a></li><li><a href="./getting-started.html#mainfunctionalities">Main functionalities</a></li><li><a href="./getting-started.html#structure">Structure</a></li></ul></b></li>
+                        <li><b>Commands<ul><li><a href="./commands.html">setup</a></li><li><a href="./commands.html#new">new</a></li><li><a href="./commands.html#build">build</a></li><li><a href="./commands.html#watch">watch</a></li><li><a href="./commands.html#upgrade">upgrade</a></li><li><a href="./commands.html#publish">publish</a></li><li><a href="./commands.html#install">install</a></li><li><a href="./commands.html#get">get</a></li><li><a href="./commands.html#config">config</a></li></ul></b></li>
+                        <li><b>Internationalization<ul><li><a href="./internationalization.html">Basic usage</a></li></ul></b></li>
+                        <li><b>Miscellaneous<ul><li><a href="./miscellaneous.html">Dummy text</a></li><li><a href="./miscellaneous.html#dummyimage">Dummy image</a></li><li><a href="./miscellaneous.html#fileglobbing">File globbing</a></li><li><a href="./miscellaneous.html#cdnusage">CDN Usage</a></li><li><a href="./miscellaneous.html#devmode">Dev mode</a></li></ul></b></li>
+                        <li><b>Configurations<ul><li><a href="./configuration.html">Files</a></li><li><a href="./configuration.html#hooks">Hooks</a></li></ul></b></li>
+                    </ul>
+                    <div class="body">
+                        <div class="markdown-body">
+                            <h1 id="commands">Commands</h1>
+                            <p>For every command, you can pass the <code>--save-options</code> flag to remember the options you just passed for future usage.
+                                <code>--save-options</code> defaults to <code>--save-options=project</code>, which writes the <code>.leavesrc</code> in your project, you can use <code>--save-options=global</code> if you want this to be global to all your
+                                project.</p>
+                            <p>The available commands are listed below.</p>
+                            <p>
+                                <a id="setup"></a>
+                            </p>
+                            <h2 id="setup">setup</h2>
+                            <p>You can run the initial setup to have shell completion by running:</p>
+                            <pre><code class="lang-sh">$ leaves setup
+</code></pre>
+                            <p>Only zsh is supported for now, but PR are welcome.</p>
+                            <p>
+                                <a id="new"></a>
+                            </p>
+                            <h2 id="new">new</h2>
+                            <p>To create a new project, just run:</p>
+                            <pre><code class="lang-sh">$ leaves new PROJECT_NAME [--html=ejs] [--css=less]
+</code></pre>
+                            <p>you can then <code>cd</code> in <code>PROJECT_NAME</code>.</p>
+                            <p>The default engine is <a href="http://learnboost.github.io/stylus/">Stylus</a>. Add <code>--css=less</code> to use <a href="http://lesscss.org/">less css</a></p>
+                            <p>The default engine is <a href="http://jade-lang.com/">Jade</a>. Add <code>--html=ejs</code> to use <a href="https://github.com/RandomEtc/ejs-locals">EJS templates (with layouts)</a></p>
+                            <p>
+                                <a id="build"></a>
+                            </p>
+                            <h2 id="build">build</h2>
+                            <p>Just run</p>
+                            <pre><code class="lang-sh">$ leaves build [--development]
+</code></pre>
+                            <p>in your project directory. If you want a development build, without concatenation and minification, pass the <code>development</code> flag.</p>
+                            <p>
+                                <a id="watch"></a>
+                            </p>
+                            <h2 id="watch">watch</h2>
+                            <p>To build and watch your files, run</p>
+                            <pre><code class="lang-sh">$ leaves [watch]
+</code></pre>
+                            <p>(which will run <code>leaves watch</code>) in your project directory.</p>
+                            <p>
+                                <a id="upgrade"></a>
+                            </p>
+                            <h2 id="upgrade">upgrade</h2>
+                            <p>You can upgrade your leaves installation by running</p>
+                            <pre><code class="lang-sh">$ leaves upgrade
+</code></pre>
+                            <p>This will run <code>npm update -g leaves</code> for you and use <code>sudo</code> only if needed.</p>
+                            <p>In your working project, you can also run</p>
+                            <pre><code class="lang-sh">$ leaves upgrade -o
+</code></pre>
+                            <p>to get the latest <code>Gruntfile.coffee</code> and update your <code>package.json</code> dependencies. Your <code>Gruntfile.coffee</code> will be overwritten so be careful when you use it if you have some changes. This will
+                                also run <code>npm install</code> for you to install the latest dependencies.
+                            </p>
+                            <p>
+                                <a id="publish"></a>
+                            </p>
+                            <h2 id="publish">publish</h2>
+                            <p>You can publish your website to <a href="https://www.heroku.com/">Heroku</a> or to <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+                            <p>To publish to Heroku, you only need to have a valid account. To publish to Github, you need to have a remote pointing to github.com in your project.</p>
+                            <pre><code class="lang-sh">$ leaves publish [--skip-build] [--skip-commit] [--skip-install] [--use-dev] [-p PROVIDER]
+</code></pre>
+                            <p><code>PROVIDER</code> parameter can be <code>github</code> , <code>heroku</code> or <code>ftp</code>. The default is <code>heroku</code>. If you want to use the development build to deploy, pass <code>--use-dev</code>.</p>
+                            <p>Your website will then be accessible at <a href="http://APP_NAME.herokuapp.com">http://APP_NAME.herokuapp.com</a> when publishing with Heroku and <a href="http://USERNAME.github.io/REPO_NAME">http://USERNAME.github.io/REPO_NAME</a>.
+                                with GitHub Pages. For heroku, <code>APP_NAME</code> will default to the appName in <code>.leavesrc</code>.</p>
+                            <p>For FTP, you will be asked for your credentials, which will be stored in <code>.leavesrc.local</code>.</p>
+                            <p>
+                                <a id="install"></a>
+                            </p>
+                            <h2 id="install">install</h2>
+                            <p>Leaves can be used as a wrapper around <a href="http://bower.io/">bower</a> and <a href="https://www.npmjs.org/">npm</a>.</p>
+                            <pre><code class="lang-sh">$ leaves install [PACKAGES [-p PROVIDER] [--no-save]]
+</code></pre>
+                            <p>If no package is given, leaves will run <code>npm install</code> and <code>bower install</code>.</p>
+                            <p>If packages are given, <code>PROVIDER</code> can be either <code>bower</code> or <code>npm</code>. If provider is not given, it will default to <code>bower</code>.</p>
+                            <p>New packages are installed using <code>--save</code> by default. You can disable this behavior by passing <code>--no-save</code>.</p>
+                            <p>
+                                <a id="get"></a>
+                            </p>
+                            <h2 id="get">get</h2>
+                            <p>Fetch and prepare project for development.</p>
+                            <pre><code class="lang-sh">$ leaves get GIT_REPOSITORY [-p PROTOCOL]
+</code></pre>
+                            <p><code>GIT_REPOSITORY</code> can be anyting that would work with <code>git clone</code>, or for GitHub repositories, the short syntax <code>user/repo</code> can be used.
+                                <code>PROTOCOL</code> is only relevant when using the short syntax, and can be
+                                <code>https</code> (default) or <code>ssh</code>.</p>
+                            <p>
+                                <a id="config"></a>
+                            </p>
+                            <h2 id="config">config</h2>
+                            <p>Leaves can be configured easily through the command line.</p>
+                            <pre><code class="lang-sh">$ leaves config [TYPE] get key
+$ leaves config [TYPE] set key value
+$ leaves config [TYPE] unset key
+</code></pre>
+                            <p>where <code>TYPE</code> can be <code>--local</code> for the local configuration which is gitignored,
+                                <code>--project</code> (default) for the project configuration which is not gitignored, or <code>--global</code> for the configuration common to all project.</p>
+                            <p>For example, if you always want to use <code>ftp</code> upload for a project, you could run:</p>
+                            <pre><code class="lang-sh">$ leaves config set commands.publish.provider ftp
+</code></pre>
+                            <p>If you always want to use less css instead of stylus, you could run</p>
+                            <pre><code class="lang-sh">$ leaves config set --global commands.new.css less
+</code></pre>
+                            <p>Local configuration is saved at <code>PROJECT_ROOT/.leavesrc.local</code>, project configuration is saved at <code>PROJECT_ROOT/.leavesrc</code> and global configuration is saved at <code>$HOME/.leaves/config</code>. It is
+                                a normal JSON file, so you can of course edit it by hand without any problem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <a href="http://claudetech.com"><img src="../img/claudetech.png" class="logo"></a>
+                <p class="love">This site is built with Leaves in Tokyo</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Leaves : Productivity tool for frontend engineers</title>
+    <meta name="author" content="Claude Tech">
+    <meta name="description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:title" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:url" content="http://oss.claudetech.com/leaves/">
+    <meta property="og:image" content="http://oss.claudetech.com/leaves/img/ogimage.png">
+    <meta property="og:site_name" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:email" content="info@claudetech.com">
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather+Sans:700,300">
+    <link rel="stylesheet" href="../components/github-markdown-css/github-markdown.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- Facebook -->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=243773772497871&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+        <!-- Twitter -->
+        <script>
+            ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+        </script>
+
+
+        <!-- Google Analitics -->
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-53835415-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <header>
+            <div class="container">
+                <a href="/"><img src="../img/leaves_logo.png" class="logo"></a>
+                <ul class="navigation">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./getting-started.html">Documentation</a></li>
+                    <li><a href="https://github.com/claudetech/leaves">Contribute</a></li>
+                    <li><a href="https://github.com/claudetech/leaves/issues">Issues</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="documentation">
+            <div class="head">
+                <div class="container">
+                    <h1>Documentation</h1></div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <ul class="menu">
+                        <li><b>Getting started<ul><li><a href="./getting-started.html">Quick start</a></li><li><a href="./getting-started.html#mainfunctionalities">Main functionalities</a></li><li><a href="./getting-started.html#structure">Structure</a></li></ul></b></li>
+                        <li><b>Commands<ul><li><a href="./commands.html">setup</a></li><li><a href="./commands.html#new">new</a></li><li><a href="./commands.html#build">build</a></li><li><a href="./commands.html#watch">watch</a></li><li><a href="./commands.html#upgrade">upgrade</a></li><li><a href="./commands.html#publish">publish</a></li><li><a href="./commands.html#install">install</a></li><li><a href="./commands.html#get">get</a></li><li><a href="./commands.html#config">config</a></li></ul></b></li>
+                        <li><b>Internationalization<ul><li><a href="./internationalization.html">Basic usage</a></li></ul></b></li>
+                        <li><b>Miscellaneous<ul><li><a href="./miscellaneous.html">Dummy text</a></li><li><a href="./miscellaneous.html#dummyimage">Dummy image</a></li><li><a href="./miscellaneous.html#fileglobbing">File globbing</a></li><li><a href="./miscellaneous.html#cdnusage">CDN Usage</a></li><li><a href="./miscellaneous.html#devmode">Dev mode</a></li></ul></b></li>
+                        <li><b>Configurations<ul><li><a href="./configuration.html">Files</a></li><li><a href="./configuration.html#hooks">Hooks</a></li></ul></b></li>
+                    </ul>
+                    <div class="body">
+                        <div class="markdown-body">
+                            <h1 id="miscellaneous">Miscellaneous</h1>
+                            <h2 id="easy-lorem-ipsum-generation">Easy lorem ipsum generation</h2>
+                            <p>The function <code>lorem</code> is available in all templates. Just call</p>
+                            <pre><code class="lang-jade">= lorem(10)
+</code></pre>
+                            <p>and you will get 10 words of lorem ipsum. For other options, see the actual <a href="https://github.com/knicklabs/lorem-ipsum.js">package documentation</a></p>
+                            <p>
+                                <a id="dummyimage"></a>
+                            </p>
+                            <h2 id="dummy-images-generation">Dummy images generation</h2>
+                            <p>You can use Leaves to easily generate dummy images of any size when during development.</p>
+                            <p>The function <code>dumimg</code> is available as a helper in all your templates, and you can use it the following way:</p>
+                            <pre><code>img(src=dumimg(128, 128, &#39;random&#39;, &#39;http://my/real/image.jpg&#39;))
+</code></pre>
+                            <p>This will generate a random image of size 128x128 pixels. The image source will be replaced by the 4th parameter during production builds. All the parameters are optional. If you omit the last parameter, the dummy image will
+                                be used even for production build.</p>
+                            <p>The available image types are for now</p>
+                            <ul>
+                                <li><code>user</code></li>
+                                <li><code>food</code></li>
+                                <li><code>mountain</code></li>
+                                <li><code>sea</code></li>
+                            </ul>
+                            <p>You can also pass an object to <code>dumimg</code>:</p>
+                            <pre><code>img(src=dumimg({width: 48, height: 48, type: &#39;random&#39;, replace: &#39;http://my/real/image.jpg&#39;}))
+</code></pre>
+                            <p>if you want to only pass some of the options.</p>
+                            <p>
+                                <a id="fileglobbing"></a>
+                            </p>
+                            <h2 id="-script-and-link-globbing"><code>script</code> and <code>link</code> globbing</h2>
+                            <p>To avoid having to insert all scripts in your layout, you can use glob syntax.</p>
+                            <pre><code class="lang-jade">html
+  head
+    script(src=&quot;js/**/*.js&quot; glob)
+    link(rel=&quot;stylesheet&quot; href=&quot;css/**/*.css&quot; glob)
+</code></pre>
+                            <p>will become</p>
+                            <pre><code class="lang-html">&lt;html&gt;
+&lt;head&gt;
+  &lt;script src=&quot;js/app.js&quot;&gt;
+  &lt;script src=&quot;js/other.js&quot;&gt;
+  &lt;script src=&quot;css/main.css&quot;&gt;
+  &lt;script src=&quot;css/other.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                            <p>for development build and</p>
+                            <pre><code class="lang-html">&lt;html&gt;
+&lt;head&gt;
+  &lt;script src=&quot;js/application.min.js&quot;&gt;
+  &lt;script src=&quot;css/application.min.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                            <p>for production build, where <code>js/application.min.js</code> and
+                                <code>css/application.min.css</code> will be concatenated and minified versions of the globbed files.</p>
+                            <h3 id="files-order">Files order</h3>
+                            <p>If alphabetical order does not fit your need, you can use glob on single files, it will be inserted only once in the output.</p>
+                            <pre><code class="lang-jade">html
+  head
+    script(src=&quot;js/this-one-is-first.js&quot; glob)
+    script(src=&quot;js/**/*.js&quot; glob)
+    link(rel=&quot;stylesheet&quot; href=&quot;css/**/*.css&quot; glob)
+</code></pre>
+                            <p>The files will always be concatenated in order of appearance.</p>
+                            <p>Check out <a href="https://github.com/claudetech/node-glob-html">the documentation</a> for more details.</p>
+                            <p>
+                                <a id="cdnusage"></a>
+                            </p>
+                            <h2 id="cdn-for-production">CDN for production</h2>
+                            <p>For library such as jQuery, it is common to use a CDN in production, but it can be better for development to used a local and non minified version of the library. You can achieve this easily with the following syntax.</p>
+                            <pre><code class="lang-jade">html
+  head
+    script(src=&quot;compnents/jquery/dist/jquery.js&quot; cdn=&quot;//code.jquery.com/jquery-2.1.1.min.js&quot;)
+    link(rel=&quot;stylesheet&quot; href=&quot;components/bootstrap/dist/css/bootstrap.css&quot; cdn=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css&quot;)
+</code></pre>
+                            <p>Note that <code>cdn</code> attribute is not compatible with <code>glob</code> and will result in a compile error.</p>
+                            <p>Check out <a href="https://github.com/claudetech/node-cdnify">the documentation</a> for more details.</p>
+                            <p>
+                                <a id="devmode"></a>
+                            </p>
+                            <h2 id="dev-mode">Dev mode</h2>
+                            <p>Leaves has a very simple development mode to change your templates dynamically in development and production. In your Jade templates, use the following:</p>
+                            <pre><code class="lang-jade">if dev
+  p This is dev
+else
+  p This is prod
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <a href="http://claudetech.com"><img src="../img/claudetech.png" class="logo"></a>
+                <p class="love">This site is built with Leaves in Tokyo</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

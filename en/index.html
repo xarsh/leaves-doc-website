@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Leaves : Productivity tool for frontend engineers</title>
+    <meta name="author" content="Claude Tech">
+    <meta name="description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:title" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:url" content="http://oss.claudetech.com/leaves/">
+    <meta property="og:image" content="http://oss.claudetech.com/leaves/img/ogimage.png">
+    <meta property="og:site_name" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:email" content="info@claudetech.com">
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather+Sans:700,300">
+    <link rel="stylesheet" href="../components/github-markdown-css/github-markdown.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- Facebook -->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=243773772497871&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+        <!-- Twitter -->
+        <script>
+            ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+        </script>
+
+
+        <!-- Google Analitics -->
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-53835415-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <header>
+            <div class="container">
+                <a href="/"><img src="../img/leaves_logo.png" class="logo"></a>
+                <ul class="navigation">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./getting-started.html">Documentation</a></li>
+                    <li><a href="https://github.com/claudetech/leaves">Contribute</a></li>
+                    <li><a href="https://github.com/claudetech/leaves/issues">Issues</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="hero">
+            <div class="container">
+                <h1 class="slogan">Productivity tool for frontend engineers</h1>
+                <p>Automatize all common frontend tasks for easy, rapid and efficient design and development.</p><a href="./getting-started.html" class="button">Quick start</a>
+                <div class="social-buttons">
+                    <div class="fb-like" data-href="http://oss.claudetech.com/leaves" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=claudetech&repo=leaves&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://oss.claudetech.com/leaves" data-dnt="true">Tweet</a>
+                </div>
+            </div>
+        </div>
+        <div class="features">
+            <div class="container">
+                <ul>
+                    <li><i class="lf-preprocess"></i><span class="head">Preprocessing</span>
+                        <p>The major HTML template engines and CSS preprocessors available in NodeJS can be used without any extra setup.</p>
+                    </li>
+                    <li><i class="lf-autoreload"></i><span class="head">Live browser refresh</span>
+                        <p>All the changes are watched and when on file save, the needed files will be recompiled and the browser reloaded automatically.</p>
+                    </li>
+                    <li><i class="lf-server"></i><span class="head">Built-in HTTP server</span>
+                        <p>An HTTP server is built-in and used to run your application to be able to use any feature that would be run in a production environment.</p>
+                    </li>
+                    <li><i class="lf-deploy"></i><span class="head">Single command deploy</span>
+                        <p>Leaves projects can be deployed to Heroku, GitHub Pages or any FTP server in a single command. The project will be compiled, optimized and uploaded automatically.</p>
+                    </li>
+                    <li><i class="lf-i18n"></i><span class="head">Internationalization</span>
+                        <p>Internationalization is available without any extra setup and Leaves can generate a static website translated in several languages easily.</p>
+                    </li>
+                    <li><i class="lf-extensible"></i><span class="head">Highly extensible</span>
+                        <p>Almost all options in the project are easily configurable and additions and changes to the default build system can be done in a few lines.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="installation">
+            <div class="container">
+                <a name="installation"></a>
+                <h1 class="title">Start in 10 seconds</h1><pre><code>npm install -g leaves</code><code>leaves new mysite</code><code>cd mysite</code><code>leaves</code></pre><a href="./getting-started.html" class="button">Get started</a></div>
+        </div>
+        <footer>
+            <div class="container">
+                <a href="http://claudetech.com"><img src="../img/claudetech.png" class="logo"></a>
+                <p class="love">This site is built with Leaves in Tokyo</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

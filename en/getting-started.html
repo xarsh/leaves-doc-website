@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Leaves : Productivity tool for frontend engineers</title>
+    <meta name="author" content="Claude Tech">
+    <meta name="description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:title" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:url" content="http://oss.claudetech.com/leaves/">
+    <meta property="og:image" content="http://oss.claudetech.com/leaves/img/ogimage.png">
+    <meta property="og:site_name" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:email" content="info@claudetech.com">
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather+Sans:700,300">
+    <link rel="stylesheet" href="../components/github-markdown-css/github-markdown.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/app.js"></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- Facebook -->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=243773772497871&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+        <!-- Twitter -->
+        <script>
+            ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+        </script>
+
+
+        <!-- Google Analitics -->
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-53835415-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <header>
+            <div class="container">
+                <a href="/"><img src="../img/leaves_logo.png" class="logo"></a>
+                <ul class="navigation">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./getting-started.html">Documentation</a></li>
+                    <li><a href="https://github.com/claudetech/leaves">Contribute</a></li>
+                    <li><a href="https://github.com/claudetech/leaves/issues">Issues</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="documentation">
+            <div class="head">
+                <div class="container">
+                    <h1>Documentation</h1></div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <ul class="menu">
+                        <li><b>Getting started<ul><li><a href="./getting-started.html">Quick start</a></li><li><a href="./getting-started.html#mainfunctionalities">Main functionalities</a></li><li><a href="./getting-started.html#structure">Structure</a></li></ul></b></li>
+                        <li><b>Commands<ul><li><a href="./commands.html">setup</a></li><li><a href="./commands.html#new">new</a></li><li><a href="./commands.html#build">build</a></li><li><a href="./commands.html#watch">watch</a></li><li><a href="./commands.html#upgrade">upgrade</a></li><li><a href="./commands.html#publish">publish</a></li><li><a href="./commands.html#install">install</a></li><li><a href="./commands.html#get">get</a></li><li><a href="./commands.html#config">config</a></li></ul></b></li>
+                        <li><b>Internationalization<ul><li><a href="./internationalization.html">Basic usage</a></li></ul></b></li>
+                        <li><b>Miscellaneous<ul><li><a href="./miscellaneous.html">Dummy text</a></li><li><a href="./miscellaneous.html#dummyimage">Dummy image</a></li><li><a href="./miscellaneous.html#fileglobbing">File globbing</a></li><li><a href="./miscellaneous.html#cdnusage">CDN Usage</a></li><li><a href="./miscellaneous.html#devmode">Dev mode</a></li></ul></b></li>
+                        <li><b>Configurations<ul><li><a href="./configuration.html">Files</a></li><li><a href="./configuration.html#hooks">Hooks</a></li></ul></b></li>
+                    </ul>
+                    <div class="body">
+                        <div class="markdown-body">
+                            <h1 id="getting-started">Getting started</h1>
+                            <h2 id="quick-start">Quick start</h2>
+                            <p>To install leaves, run</p>
+                            <pre><code class="lang-sh">$ npm install -g leaves
+</code></pre>
+                            <p>If <code>npm install</code> fails, try to use <code>sudo</code>.</p>
+                            <p>Then, to install some extra dependencies automatically and setup the shell completion, run</p>
+                            <pre><code class="lang-sh">$ leaves setup
+</code></pre>
+                            <p>to start a new project</p>
+                            <pre><code class="lang-sh">$ leaves new project_name
+$ cd project_name
+$ leaves
+</code></pre>
+                            <p>and start coding!</p>
+                            <h3 id="get-a-project-from-git">Get a project from Git</h3>
+                            <pre><code class="lang-sh">$ leaves get https://github.com/me/my_leaves_project.git
+$ cd my_leaves_project
+$ leaves
+</code></pre>
+                            <p>and start coding!</p>
+                            <p>
+                                <a id="mainfunctionalities"></a>
+                            </p>
+                            <h2 id="main-functionalities">Main functionalities</h2>
+                            <ul>
+                                <li>HTML templating via <a href="http://jade-lang.com/">Jade</a> or <a href="https://github.com/RandomEtc/ejs-locals">EJS</a></li>
+                                <li>CSS templating via <a href="http://learnboost.github.io/stylus/">Stylus</a> or <a href="http://lesscss.org/">less</a></li>
+                                <li><a href="http://coffeescript.org/">CoffeeScript</a> compilation</li>
+                                <li>Project watch and livereload</li>
+                                <li>Scripts and stylesheets globbing with <code>**/*.js</code> like syntax</li>
+                                <li>Compile error displayed in browser</li>
+                                <li>Single command deploy to Heroku and GitHub pages, and FTP servers</li>
+                                <li>Simple internationalization support</li>
+                                <li>Misc: lorem-ipsum generator, easy CDN usage, shell completion, single command upgrade, dev mode</li>
+                            </ul>
+                            <p>
+                                <a id="structure"></a>
+                            </p>
+                            <h2 id="structure">Structure</h2>
+                            <p>The app has the following structure:</p>
+                            <pre><code>.
+├── assets
+│   ├── css
+│   │   ├── .keep
+│   │   └── main.styl
+│   ├── favicon.ico
+│   ├── img
+│   │   └── .keep
+│   └── js
+│       ├── app.coffee
+│       └── .keep
+├── bower.json
+├── .bowerrc
+├── .gitignore
+├── .gruntfile.coffee
+├── .leavesrc
+├── .leavesrc.local
+├── package.json
+└── views
+    ├── index.jade
+    └── layout.jade
+</code></pre>
+                            <p>when running leaves, <code>views</code> and <code>assets</code> are watched, compiled or copied on change and your browser is reloaded.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <a href="http://claudetech.com"><img src="../img/claudetech.png" class="logo"></a>
+                <p class="love">This site is built with Leaves in Tokyo</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

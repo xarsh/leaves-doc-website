@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Leaves : Productivity tool for frontend engineers</title>
+    <meta name="author" content="Claude Tech">
+    <meta name="description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:title" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Automatize all common frontend tasks for easy, rapid and efficient design and development.">
+    <meta property="og:url" content="http://oss.claudetech.com/leaves/">
+    <meta property="og:image" content="http://oss.claudetech.com/leaves/img/ogimage.png">
+    <meta property="og:site_name" content="Leaves : Productivity tool for frontend engineers">
+    <meta property="og:email" content="info@claudetech.com">
+    <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather+Sans:700,300">
+    <link rel="stylesheet" href="components/github-markdown-css/github-markdown.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <!-- Facebook -->
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=243773772497871&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+
+        <!-- Twitter -->
+        <script>
+            ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                    p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+        </script>
+
+
+        <!-- Google Analitics -->
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-53835415-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <header>
+            <div class="container">
+                <a href="/"><img src="img/leaves_logo.png" class="logo"></a>
+                <ul class="navigation">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./getting-started.html">Documentation</a></li>
+                    <li><a href="https://github.com/claudetech/leaves">Contribute</a></li>
+                    <li><a href="https://github.com/claudetech/leaves/issues">Issues</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="documentation">
+            <div class="head">
+                <div class="container">
+                    <h1>Documentation</h1></div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <ul class="menu">
+                        <li><b>Getting started<ul><li><a href="./getting-started.html">Quick start</a></li><li><a href="./getting-started.html#mainfunctionalities">Main functionalities</a></li><li><a href="./getting-started.html#structure">Structure</a></li></ul></b></li>
+                        <li><b>Commands<ul><li><a href="./commands.html">setup</a></li><li><a href="./commands.html#new">new</a></li><li><a href="./commands.html#build">build</a></li><li><a href="./commands.html#watch">watch</a></li><li><a href="./commands.html#upgrade">upgrade</a></li><li><a href="./commands.html#publish">publish</a></li><li><a href="./commands.html#install">install</a></li><li><a href="./commands.html#get">get</a></li><li><a href="./commands.html#config">config</a></li></ul></b></li>
+                        <li><b>Internationalization<ul><li><a href="./internationalization.html">Basic usage</a></li></ul></b></li>
+                        <li><b>Miscellaneous<ul><li><a href="./miscellaneous.html">Dummy text</a></li><li><a href="./miscellaneous.html#dummyimage">Dummy image</a></li><li><a href="./miscellaneous.html#fileglobbing">File globbing</a></li><li><a href="./miscellaneous.html#cdnusage">CDN Usage</a></li><li><a href="./miscellaneous.html#devmode">Dev mode</a></li></ul></b></li>
+                        <li><b>Configurations<ul><li><a href="./configuration.html">Files</a></li><li><a href="./configuration.html#hooks">Hooks</a></li></ul></b></li>
+                    </ul>
+                    <div class="body">
+                        <div class="markdown-body">
+                            <h1 id="configuration">Configuration</h1>
+                            <h2 id="configuration-files">Configuration files</h2>
+                            <p>A lot of options in leaves can be configured. The configuration can be global, project based, or local (ignored by git).</p>
+                            <p>Configuration is stored in the following files:</p>
+                            <ul>
+                                <li>global: <code>$HOME/.leaves/config</code></li>
+                                <li>project: <code>PROJECT/.leavesrc</code></li>
+                                <li>local: <code>PROJECT/.leavesrc.local</code></li>
+                            </ul>
+                            <p>The files are in JSON format and can be edited by hand, or using the <code>config</code> command:</p>
+                            <pre><code>$ leaves config [--global|--local|--project] set KEY VALUE
+</code></pre>
+                            <p>The global configuration is used for global commands, such as <code>new</code> or <code>get</code>, and as default if the setting is not found in the project configuration.</p>
+                            <p>The project configuration can be used for example to set the default deployment method, or to modify the output directories for the project.</p>
+                            <p>The default configuration looks like this:</p>
+                            <pre><code class="lang-json">{
+  &quot;i18n&quot;: {
+    &quot;localesDir&quot;: &quot;locales&quot;
+  },
+  &quot;html&quot;: {
+    &quot;ext&quot;: &quot;.html&quot;
+  },
+  &quot;css&quot;:{
+    &quot;outdir&quot;: &quot;css&quot;
+  },
+  &quot;js&quot;: {
+    &quot;outdir&quot;: &quot;js&quot;
+  },
+  &quot;ports&quot;:
+    &quot;http&quot;: 9000,
+    &quot;livereload&quot;: 35729
+}
+</code></pre>
+                            <p>All build configurations can be prefixed by <code>dist.</code> or <code>dev.</code> to be active only in development or distribution environments.</p>
+                            <p>For example, to create a Wordpress theme using Leaves, we used the following configurations:</p>
+                            <pre><code class="lang-sh">$ leaves config set dist.html.ext .php
+$ leaves config set css.outdir .
+</code></pre>
+                            <p>so that the HTML is compiled to <code>.php</code> in distribution, and the CSS is output in the root directory.</p>
+                            <p>Apart from the above configurations, all commands can also be customized to take defaults arguments, by using</p>
+                            <pre><code class="lang-sh">$ leaves config set commands.COMMAND_NAME.OPTION_NAME VALUE
+</code></pre>
+                            <p>for example:</p>
+                            <pre><code class="lang-sh">$ leaves config set commands.publish.provider ftp
+</code></pre>
+                            <p>
+                                <a id="hooks"></a>
+                            </p>
+                            <h2 id="hooks">Hooks</h2>
+                            <p>When the normal build process and the configuration options are not enough, hooks can be used to customize the build process further.</p>
+                            <p>Leaves uses Grunt to build the project, so hooks need to be written as grunt tasks in a file named
+                                <code>grunt.hooks.coffee</code> or <code>grunt.hooks.js</code>.</p>
+                            <p>The following tasks are run during the compilation:</p>
+                            <ul>
+                                <li><code>compile</code>
+                                    <ul>
+                                        <li><code>clean</code></li>
+                                        <li><code>makeCopy</code></li>
+                                        <li><code>stylus</code> (or <code>less</code>)</li>
+                                        <li><code>coffee</code></li>
+                                        <li><code>views</code></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>All of these can be prefixed by <code>before</code> or <code>after</code> to create a hook for the task. For example, a task that runs after <code>stylus</code> would look like this.</p>
+                            <pre><code class="lang-coffee">module.exports = (grunt, config) -&gt;
+  grunt.registerTask &#39;afterStylus&#39;, (env) -&gt;
+    // do something after CSS has been compiled
+</code></pre>
+                            <p><code>config</code> is the project configuration and <code>env</code> is
+                                <code>tmp</code> (when watching), <code>dev</code> (with <code>leaves build --development</code>) or <code>dist</code> (with <code>leaves build</code>).</p>
+                            <p>Here is an example of hooks we used when building a JS SDK using Leaves. We inlined all the CSS in a JS file, and after the build removed everything except the minified SDK file.</p>
+                            <pre><code class="lang-coffee">path = require &#39;path&#39;
+fs   = require &#39;fs-extra&#39;
+_    = require &#39;lodash&#39;
+
+SDK_FILE_NAME = &quot;voisee-js-sdk.min.js&quot;
+
+module.exports = (grunt, config) -&gt;
+  grunt.registerTask &#39;afterStylus&#39;, &#39;Inline style&#39;, (env) -&gt;
+    sdkCssFile = path.join(grunt.config.get(&#39;stylus&#39;)[env].files[0].dest, &#39;sdk.css&#39;)
+    jsOutFile = path.join(grunt.config.get(&#39;coffee&#39;)[env].files[0].dest, &#39;sdk&#39;, &#39;style.js&#39;)
+    sdkCss = fs.readFileSync(sdkCssFile, &#39;utf8&#39;).replace(/\n/g, &#39;&#39;)
+    jsInline = &quot;VoiseeSDK.css=&#39;#{sdkCss}&#39;;&quot;
+    fs.writeFileSync jsOutFile, jsInline
+
+  grunt.registerTask &#39;afterCompile&#39;, (env) -&gt;
+    return unless env == &#39;dist&#39;
+    done = @async()
+    sdkFile = path.join(grunt.config.get(&#39;coffee&#39;).dist.files[0].dest, &#39;sdk.min.js&#39;)
+    fs.move sdkFile, &quot;dist/#{SDK_FILE_NAME}&quot;, -&gt;
+      _.each fs.readdirSync(&#39;dist&#39;), (file) -&gt;
+        return if file == SDK_FILE_NAME
+        fs.removeSync path.join(&#39;dist&#39;, file)
+      done()
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <a href="http://claudetech.com"><img src="img/claudetech.png" class="logo"></a>
+                <p class="love">This site is built with Leaves in Tokyo</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
