@@ -10,7 +10,8 @@
     "leaves": "0.23.17",
     "commands": {
         "publish": {
-            "provider": "ftp"
+            "provider": "github",
+            "resetSettings": false
         }
     },
     "i18n": {
