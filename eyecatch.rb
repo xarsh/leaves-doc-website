@@ -1,6 +1,6 @@
 before_script do
+  run 'npm install'
   run 'npm install -g leaves'
-  run 'leaves install'
 end
 
 serve 'leaves'
